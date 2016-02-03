@@ -1,10 +1,11 @@
 #!/bin/bash
+# this is from Chanilly Robotics, github here: https://github.com/Chantilly612Code/
 
 #satisfy dependencies
 echo "build.sh: Downloading Libraries..."
-#./.wpilib-download.sh
+./.wpilib-download.sh
 echo "build.sh: Downloading Compiler..."
-#./.compiler-download.sh
+./.compiler-download.sh
 
 #build
 cd ./.build
