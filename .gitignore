@@ -26,3 +26,15 @@
 *.exe
 *.out
 *.app
+
+# Also ignore anything from wpi, all our build files
+build/*
+wpilib/*
+.build/*
+
+# ignore anything from our personal enviroment (vim files, plugins etc)
+*.swp
+.ycm_extra_conf.py
+*.pyc
+
+
