@@ -1,3 +1,5 @@
+
+# this is from Chanilly Robotics, github here: https://github.com/Chantilly612Code/
 cmake_minimum_required(VERSION 2.8)
 project(Robot)
 set(CMAKE_BUILD_TYPE Debug)

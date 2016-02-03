@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# this is from Chanilly Robotics, github here: https://github.com/Chantilly612Code/
+
 # This script downloads the latest (known) file of the WPI C++ plugin.
 # The .jar file (really a .zip) contains a cpp.zip that has the
 # include/ and lib/ folders necessary to build/link an executable FRC robot.

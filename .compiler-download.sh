@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# this is from Chanilly Robotics, github here: https://github.com/Chantilly612Code/
+
 # Will download required packages for building
 # Using -qq and -y on apt-get is considered redundant,
 # but it is unlikely that the redundancy is well known,
