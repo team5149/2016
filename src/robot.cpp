@@ -1,25 +1,18 @@
 #include "robot.h"
 
+// instantiate static members
+std::shared_ptr<Drivetrain> Robot::drive;
 
-Robot::Robot() : drive(0,1), stick(0){
-	
-}
 void Robot::RobotInit(){
-	printf("hello world!\n");
+	// instantiate static variables
+	drive.reset(new Drivetrain());
 }
 
-void Robot::Disabled(){
-	printf("FROM US!!!\n");
-	drive.SetExpiration(0.1);
+void Robot::TeleopPeriodic(){
+	// run io each loop
+	io.Run();
 }
 
-void Robot::OperatorControl(){
-	while(IsOperatorControl() && IsEnabled()){
-		Wait(0.005);
-		drive.ArcadeDrive(stick); 	
-	}
-
-}
 
 // macro to set up the main and such
 START_ROBOT_CLASS(Robot)

@@ -2,21 +2,23 @@
 #define ROBOT_H
 
 #include "WPILib.h"
+#include "subsystems/drivetrain.h"
+#include "IO.h"
 
-class Robot : public SampleRobot {
+// This is the main robot class
+class Robot : public IterativeRobot {
 public:
-	Robot();
 	void RobotInit();
-	void Disabled();
-	void OperatorControl();
-	/*
-	void Autonomous(){};
-	void OperatorControl(){};
-	void Test(){};
-	void RobotMain(){};
-	*/
+
+	// called periodically (ie every 0.02 seconds)
+	void TeleopPeriodic();
+
+	// Declare subsystems static for use in multiple places
+	static std::shared_ptr<Drivetrain> drive;
+
 private:
-	RobotDrive drive;
-	Joystick stick;
+
+	IO io;
 };
+
 #endif
