@@ -1,5 +1,3 @@
-# this is from Chanilly Robotics, github here: https://github.com/Chantilly612Code/
-
 # this one is important
 SET(CMAKE_SYSTEM_NAME Linux)
 #this one not so much

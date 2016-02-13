@@ -1,5 +1,3 @@
-# this is from Chanilly Robotics, github here: https://github.com/Chantilly612Code/
-
 cmake_minimum_required(VERSION 2.8)
 INCLUDE(CMakeForceCompiler)
 set(ARM_PREFIX arm-frc-linux-gnueabi)
