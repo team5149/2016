@@ -3,12 +3,12 @@
 // instantiate static members
 std::shared_ptr<Drivetrain> Robot::drive;
 
-void Robot::RobotInit(){
+void Robot::RobotInit() {
 	// instantiate static variables
 	drive.reset(new Drivetrain());
 }
 
-void Robot::TeleopPeriodic(){
+void Robot::TeleopPeriodic() {
 	// run io each loop
 	io.Run();
 }
