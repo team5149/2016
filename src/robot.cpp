@@ -3,7 +3,7 @@
 // instantiate static members
 std::shared_ptr<Drivetrain> Robot::drive;
 
-void Robot::RobotInit(){
+void Robot::RobotInit() {
 	// instantiate static variables
 	drive.reset(new Drivetrain());
 }
@@ -21,6 +21,7 @@ void Robot::OperatorControl(){
 		Wait(0.001);
 	}
 }
+
 
 void Robot::Autonomous(){
 	while(IsEnabled() && IsAutonomous()){

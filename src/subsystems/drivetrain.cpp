@@ -2,6 +2,8 @@
 #include "../utils/constants.h"
 
 Drivetrain::Drivetrain() { 
+	// Are we going to use the Talon safety features?
+	// tal_controller->SetSafetyEnabled(true)?
 	tal_left_a.reset(new Talon(Constants::LEFT_DRIVE_PWM_A));
 	tal_left_b.reset(new Talon(Constants::LEFT_DRIVE_PWM_B)); 
 	tal_right_a.reset(new Talon(Constants::RIGHT_DRIVE_PWM_A)); 
@@ -9,8 +11,13 @@ Drivetrain::Drivetrain() {
 	
 }
 
-void Drivetrain::setPower(float left_pwr, float right_pwr){
-	// TODO set the output power
+// Set left and right drive output power on scale -1 to 1
+// Caller responsibility to ensure that left_pwr and right_pwr are in between -1 and 1.
+void Drivetrain::setPower(float left_pwr, float right_pwr) {
+	tal_left_a->Set(left_pwr);
+	tal_left_b->Set(left_pwr);
+	tal_right_a->Set(right_pwr);
+	tal_right_b->Set(right_pwr);
 }
 
 Drivetrain::~Drivetrain(){}
