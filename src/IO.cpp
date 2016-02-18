@@ -3,14 +3,16 @@
 #include "robot.h"
 #include <cassert>
 
-IO::IO() {
-	r_stick.reset(new Joystick(Constants::RIGHT_JOYSTICK));
-	l_stick.reset(new Joystick(Constants::LEFT_JOYSTICK));
+IO::IO() :
+	r_stick(Constants::RIGHT_JOYSTICK),
+	l_stick(Constants::LEFT_JOYSTICK)
+{
+
 }
 
 void IO::Run() {
-	const float left_power {l_stick->GetY()};
-	const float right_power {r_stick->GetY()};
+	const float left_power {l_stick.GetY()};
+	const float right_power {r_stick.GetY()};
 	
 	// Define NDEBUG to get rid of these checks.
 	// I only included them as the documentation offered no

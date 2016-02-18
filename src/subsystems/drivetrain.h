@@ -12,7 +12,7 @@ public:
 	void setPower(float left, float right);
 private:
 
-	std::shared_ptr<Talon> tal_left_a, tal_left_b,
+	Talon tal_left_a, tal_left_b,
 		tal_right_a, tal_right_b;	
 };
 
