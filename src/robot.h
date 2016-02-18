@@ -6,12 +6,12 @@
 #include "IO.h"
 
 // This is the main robot class
-class Robot : public IterativeRobot {
+class Robot : public SampleRobot {
 public:
 	void RobotInit();
 
-	// called periodically (ie every 0.02 seconds)
-	void TeleopPeriodic();
+	void Autonomous();
+	void OperatorControl();
 
 	// Declare subsystems static for use in multiple places
 	static std::shared_ptr<Drivetrain> drive;
