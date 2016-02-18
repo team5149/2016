@@ -13,8 +13,8 @@ public:
 	void setState(bool state);
 
 private:
-	Talon tal_a;
-	Solenoid sol_a;
+	std::shared_ptr<Talon> tal_a;
+	std::shared_ptr<Solenoid> sol_a;
 };
 
 #endif
