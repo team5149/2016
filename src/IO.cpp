@@ -3,10 +3,10 @@
 #include "robot.h"
 #include <cassert>
 
-IO::IO()  :
-	driver_stick {new Joystick{Constants::DRIVER_JOYSTICK}},
-	manip_stick { new Joystick{Constants::MANIP_JOYSTICK}}
-{
+IO::IO(){
+	driver_stick.reset(new Joystick{Constants::DRIVER_JOYSTICK});
+	manip_stick.reset(new Joystick{Constants::MANIP_JOYSTICK});
+
 
 }
 

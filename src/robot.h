@@ -4,8 +4,8 @@
 #include "WPILib.h"
 
 #include "subsystems/drivetrain.h"
-#include "subsystems/hand.h"
-#include "subsystems/shooter.h"
+//#include "subsystems/hand.h"
+//#include "subsystems/shooter.h"
 
 #include "IO.h"
 
@@ -19,8 +19,8 @@ public:
 
 	// Declare subsystems static for use in multiple places
 	static std::shared_ptr<Drivetrain> drive;
-	static std::shared_ptr<Hand> hand;
-	static std::shared_ptr<Shooter> shooter;
+	//static std::shared_ptr<Hand> hand;
+	//static std::shared_ptr<Shooter> shooter;
 
 private:
 
