@@ -2,6 +2,8 @@
 #include "../utils/constants.h"
 
 Drivetrain::Drivetrain() { 
+	// Are we going to use the Talon safety features?
+	// tal_controller->SetSafetyEnabled(true)?
 	tal_left_a.reset(new Talon(Constants::LEFT_DRIVE_PWM_A));
 	tal_left_b.reset(new Talon(Constants::LEFT_DRIVE_PWM_B)); 
 	tal_right_a.reset(new Talon(Constants::RIGHT_DRIVE_PWM_A)); 
