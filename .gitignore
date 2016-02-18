@@ -37,4 +37,7 @@ wpilib/*
 .ycm_extra_conf.py
 *.pyc
 
+# vim undo and backup files
+.*~ 
+*~
 
