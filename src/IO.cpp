@@ -9,6 +9,11 @@ IO::IO() {
 }
 
 void IO::Run() {
+	// TODO:
+	// 1) Add code for controlling arm
+	// 2) Maybe do a different method than tank control? It seems a bit awkward
+	// to drive, but I'm not driving it so it's really a non issue for me
+	// Also, in relations to the tank controls, do we have the correct controller?
 	const float left_power {l_stick->GetY()};
 	const float right_power {r_stick->GetY()};
 	
