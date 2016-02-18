@@ -13,7 +13,7 @@ public:
 	const static bool RETRACT = false; 
 
 private:
-	Solenoid sol_a, sol_b;
+	std::shared_ptr<Solenoid> sol_a, sol_b;
 };
 
 #endif
