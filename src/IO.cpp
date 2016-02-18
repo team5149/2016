@@ -4,15 +4,15 @@
 #include <cassert>
 
 IO::IO() :
-	r_stick {Constants::RIGHT_JOYSTICK},
-	l_stick {Constants::LEFT_JOYSTICK}
+	driver_stick {Constants::DRIVER_JOYSTICK},
+	manip_stick {Constants::MANIP_JOYSTICK}
 {
 
 }
 
 void IO::Run() {
-	const float left_power {l_stick.GetY()};
-	const float right_power {r_stick.GetY()};
+	const float left_power {driver_stick.GetY(Joystick::kLeftHand)};
+	const float right_power {manip_stick.GetY(Joystick::kRightHand)};
 	
 	// Define NDEBUG to get rid of these checks.
 	// I only included them as the documentation offered no
@@ -27,6 +27,7 @@ void IO::Run() {
 
 
 	// TODO: arm control
+	
 	
 	// TODO: shooter control
 }

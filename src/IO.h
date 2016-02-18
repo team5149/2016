@@ -13,10 +13,7 @@ public:
 	void Run();
 
 private:
-	// use shared_ptr because it is easier than unique
-	// not sure if these need to have ptrs, but the 
-	// auto gen code from other teams has it...
-	Joystick r_stick, l_stick;
+	Joystick driver_stick, manip_stick;
 };
 
 #endif // io

@@ -3,8 +3,8 @@
 
 #include "WPILib.h"
 namespace Constants {
-	constexpr uint32_t RIGHT_JOYSTICK {0};
-	constexpr uint32_t LEFT_JOYSTICK {1};
+	constexpr uint32_t DRIVER_JOYSTICK {0};
+	constexpr uint32_t MANIP_JOYSTICK {1};
 
 	constexpr uint32_t RIGHT_DRIVE_PWM_A {0};
 	constexpr uint32_t RIGHT_DRIVE_PWM_B {1};
@@ -16,7 +16,6 @@ namespace Constants {
 
 	constexpr uint32_t HAND_MOTOR_A {4};
 	constexpr uint32_t HAND_SOLENOID_A {5};
-
 }
 
 #endif // constants
