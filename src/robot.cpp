@@ -1,11 +1,12 @@
 #include "robot.h"
 
 // instantiate static members
-Drivetrain Robot::drive;
-Hand Robot::hand;
-Shooter Robot::shooter;
+std::shared_ptr<Drivetrain> Robot::drive { new Drivetrain{} };
+std::shared_ptr<Hand> Robot::hand { new Hand{} };
+std::shared_ptr<Shooter> Robot::shooter { new Shooter{} };
 
-void Robot::RobotInit() {}
+void Robot::RobotInit()
+{}
 
 void Robot::OperatorControl() {
 

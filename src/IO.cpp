@@ -3,16 +3,16 @@
 #include "robot.h"
 #include <cassert>
 
-IO::IO() :
-	driver_stick {Constants::DRIVER_JOYSTICK},
-	manip_stick {Constants::MANIP_JOYSTICK}
+IO::IO()  :
+	driver_stick {new Joystick{Constants::DRIVER_JOYSTICK}},
+	manip_stick { new Joystick{Constants::MANIP_JOYSTICK}}
 {
 
 }
 
 void IO::Run() {
-	const float left_power {driver_stick.GetY(Joystick::kLeftHand)};
-	const float right_power {manip_stick.GetY(Joystick::kRightHand)};
+	const float left_power {driver_stick->GetY(Joystick::kLeftHand)};
+	const float right_power {manip_stick->GetY(Joystick::kRightHand)};
 	
 	// Define NDEBUG to get rid of these checks.
 	// I only included them as the documentation offered no
@@ -23,7 +23,7 @@ void IO::Run() {
 	assert(right_power >= -1.0);
 	assert(right_power <= 1.0);
 
-	Robot::drive.setPower(left_power, right_power);
+	Robot::drive->setPower(left_power, right_power);
 
 
 	// TODO: arm control

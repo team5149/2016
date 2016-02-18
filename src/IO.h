@@ -13,7 +13,7 @@ public:
 	void Run();
 
 private:
-	Joystick driver_stick, manip_stick;
+	std::shared_ptr<Joystick> driver_stick, manip_stick;
 };
 
 #endif // io
