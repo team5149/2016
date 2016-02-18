@@ -3,14 +3,18 @@
 
 #include "WPILib.h"
 
-class Hand{
+class Hand {
 public:
 	Hand();
 
-	// TODO: decide on the interface for this 
+	static constexpr bool HAND_CLOSED {false};
+	static constexpr bool HAND_OPEN {true};
+
+	void setState(bool state);
 
 private:
 	Talon tal_a;
+	Solenoid sol_a;
 };
 
 #endif

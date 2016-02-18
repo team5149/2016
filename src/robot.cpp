@@ -7,7 +7,7 @@ Shooter Robot::shooter;
 
 void Robot::RobotInit() {}
 
-void Robot::OperatorControl(){
+void Robot::OperatorControl() {
 
 	// loop while the robot is running and drive control
 	while(IsEnabled() && IsOperatorControl()){
@@ -22,7 +22,7 @@ void Robot::OperatorControl(){
 }
 
 
-void Robot::Autonomous(){
+void Robot::Autonomous() {
 	while(IsEnabled() && IsAutonomous()){
 		// TODO: put something here
 		Wait(0.001);

@@ -2,10 +2,10 @@
 #include "../utils/constants.h"
 
 Drivetrain::Drivetrain():
-	tal_left_a(Constants::LEFT_DRIVE_PWM_A),
-	tal_left_b(Constants::LEFT_DRIVE_PWM_B), 
-	tal_right_a(Constants::RIGHT_DRIVE_PWM_A), 
-	tal_right_b(Constants::RIGHT_DRIVE_PWM_B)
+	tal_left_a {Constants::LEFT_DRIVE_PWM_A},
+	tal_left_b {Constants::LEFT_DRIVE_PWM_B}, 
+	tal_right_a {Constants::RIGHT_DRIVE_PWM_A}, 
+	tal_right_b {Constants::RIGHT_DRIVE_PWM_B}
 {
  
 	// Are we going to use the Talon safety features?

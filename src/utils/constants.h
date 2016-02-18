@@ -15,6 +15,7 @@ namespace Constants {
 	constexpr uint32_t SHOOTER_SOLENOID_B {1};
 
 	constexpr uint32_t HAND_MOTOR_A {4};
+	constexpr uint32_t HAND_SOLENOID_A {5};
 
 }
 

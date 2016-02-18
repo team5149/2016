@@ -4,8 +4,8 @@
 #include <cassert>
 
 IO::IO() :
-	r_stick(Constants::RIGHT_JOYSTICK),
-	l_stick(Constants::LEFT_JOYSTICK)
+	r_stick {Constants::RIGHT_JOYSTICK},
+	l_stick {Constants::LEFT_JOYSTICK}
 {
 
 }
