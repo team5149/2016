@@ -2,7 +2,7 @@
 
 // instantiate static members
 Drivetrain Robot::drive;
-Arm Robot::arm;
+Hand Robot::hand;
 Shooter Robot::shooter;
 
 void Robot::RobotInit() {}

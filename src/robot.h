@@ -4,7 +4,7 @@
 #include "WPILib.h"
 
 #include "subsystems/drivetrain.h"
-#include "subsystems/arm.h"
+#include "subsystems/hand.h"
 #include "subsystems/shooter.h"
 
 #include "IO.h"
@@ -19,7 +19,7 @@ public:
 
 	// Declare subsystems static for use in multiple places
 	static Drivetrain drive;
-	static Arm arm;
+	static Hand hand;
 	static Shooter shooter;
 
 private:

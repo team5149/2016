@@ -16,7 +16,7 @@ public:
 	static const uint32_t SHOOTER_SOLENOID_A = 0;
 	static const uint32_t SHOOTER_SOLENOID_B = 1;
 
-	static const uint32_t ARM_MOTOR_A = 4;
+	static const uint32_t HAND_MOTOR_A = 4;
 
 };
 

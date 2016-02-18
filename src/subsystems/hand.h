@@ -3,9 +3,9 @@
 
 #include "WPILib.h"
 
-class Arm {
+class Hand{
 public:
-	Arm();
+	Hand();
 
 	// TODO: decide on the interface for this 
 
