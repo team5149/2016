@@ -3,8 +3,6 @@
 
 #include "WPILib.h"
 namespace Constants {
-public:
-
 	constexpr uint32_t RIGHT_JOYSTICK {0};
 	constexpr uint32_t LEFT_JOYSTICK {1};
 
@@ -18,6 +16,6 @@ public:
 
 	constexpr uint32_t HAND_MOTOR_A {4};
 
-};
+}
 
 #endif // constants
