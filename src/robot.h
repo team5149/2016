@@ -18,9 +18,9 @@ public:
 	void OperatorControl();
 
 	// Declare subsystems static for use in multiple places
-	static Drivetrain drive;
-	static Hand hand;
-	static Shooter shooter;
+	static std::shared_ptr<Drivetrain> drive;
+	static std::shared_ptr<Hand> hand;
+	static std::shared_ptr<Shooter> shooter;
 
 private:
 
