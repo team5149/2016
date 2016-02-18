@@ -2,7 +2,11 @@
 #define ROBOT_H
 
 #include "WPILib.h"
+
 #include "subsystems/drivetrain.h"
+#include "subsystems/arm.h"
+#include "subsystems/shooter.h"
+
 #include "IO.h"
 
 // This is the main robot class
@@ -14,7 +18,9 @@ public:
 	void OperatorControl();
 
 	// Declare subsystems static for use in multiple places
-	static std::shared_ptr<Drivetrain> drive;
+	static Drivetrain drive;
+	static Arm arm;
+	static Shooter shooter;
 
 private:
 

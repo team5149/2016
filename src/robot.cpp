@@ -1,12 +1,11 @@
 #include "robot.h"
 
 // instantiate static members
-std::shared_ptr<Drivetrain> Robot::drive;
+Drivetrain Robot::drive;
+Arm Robot::arm;
+Shooter Robot::shooter;
 
-void Robot::RobotInit() {
-	// instantiate static variables
-	drive.reset(new Drivetrain());
-}
+void Robot::RobotInit() {}
 
 void Robot::OperatorControl(){
 
