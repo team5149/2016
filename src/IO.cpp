@@ -5,14 +5,14 @@
 
 IO::IO(){
 	driver_stick.reset(new Joystick{Constants::DRIVER_JOYSTICK});
-	manip_stick.reset(new Joystick{Constants::MANIP_JOYSTICK});
+	//manip_stick.reset(new Joystick{Constants::MANIP_JOYSTICK});
 
 
 }
 
 void IO::Run() {
-	const float left_power {driver_stick->GetY(Joystick::kLeftHand)};
-	const float right_power {manip_stick->GetY(Joystick::kRightHand)};
+	const float left_power {driver_stick->GetY()};
+	const float right_power {driver_stick->GetTwist()};
 	
 	// Define NDEBUG to get rid of these checks.
 	// I only included them as the documentation offered no

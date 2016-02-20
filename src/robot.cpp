@@ -2,26 +2,29 @@
 
 // instantiate static members
 std::shared_ptr<Drivetrain> Robot::drive;
-//std::shared_ptr<Hand> Robot::hand { new Hand{} };
+std::shared_ptr<Hand> Robot::hand;
 //std::shared_ptr<Shooter> Robot::shooter { new Shooter{} };
 
 void Robot::RobotInit()
 {
 	drive.reset(new Drivetrain());
+	hand.reset(new Hand());
+	printf("starting!\n");
 }
 
 void Robot::OperatorControl() {
 
+	printf("into op control\n");
 	// loop while the robot is running and drive control
 	while(IsEnabled() && IsOperatorControl()){
 		// only run when we get a new packet
-		if(IsNewDataAvailable()){
-			io.Run();
-		}
+		io.Run();
 
 		// don't burn cpu
 		Wait(0.001);
 	}
+
+	printf("out of op control\n");
 }
 
 
