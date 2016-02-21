@@ -3,12 +3,13 @@
 // instantiate static members
 std::shared_ptr<Drivetrain> Robot::drive;
 std::shared_ptr<Hand> Robot::hand;
-//std::shared_ptr<Shooter> Robot::shooter { new Shooter{} };
+std::shared_ptr<Shooter> Robot::shooter;
 
 void Robot::RobotInit()
 {
 	drive.reset(new Drivetrain());
 	hand.reset(new Hand());
+	shooter.reset(new Shooter());
 	printf("starting!\n");
 }
 

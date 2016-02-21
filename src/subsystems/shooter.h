@@ -9,11 +9,20 @@ public:
 
 	void setState(bool state);
 
-	const static bool FIRE = true;
-	const static bool RETRACT = false; 
+	// controlling actual shooter 
+	void fire();
+	void retract();
+
+	// controlling angle pos
+	void up();
+	void down();
+
 
 private:
-	std::shared_ptr<Solenoid> sol_a, sol_b;
+	std::shared_ptr<DoubleSolenoid> fire_double;
+	std::shared_ptr<Solenoid> fire_single;
+
+	std::shared_ptr<DoubleSolenoid> pos_sol;
 };
 
 #endif
