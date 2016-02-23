@@ -13,11 +13,11 @@ Hand::Hand(){
 }
 
 void Hand::grab(){
-	gripper->Set(DoubleSolenoid::Value::kForward);
+	gripper->Set(DoubleSolenoid::Value::kReverse);
 }
 
 void Hand::release(){
-	gripper->Set(DoubleSolenoid::Value::kReverse);
+	gripper->Set(DoubleSolenoid::Value::kForward);
 }
 
 void Hand::setMotor(float power) {

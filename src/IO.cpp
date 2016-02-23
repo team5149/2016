@@ -42,7 +42,13 @@ void IO::Run() {
 
 	const bool arm_up { manip_stick->GetRawButton(2) };
 	if(angleLatch(arm_up)){
-		if(Robot::shooter->isUp()) { Robot::shooter->down(); }
-		else { Robot::shooter->down(); }
+		if(Robot::shooter->isUp()) { 
+			printf("up\n");
+			Robot::shooter->down(); 
+		}
+		else { 
+			printf("down\n");
+			Robot::shooter->up(); 
+		}
 	}
 }
