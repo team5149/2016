@@ -20,10 +20,18 @@ void Shooter::retract() {
 	fire_single->Set(false);
 }
 
+bool Shooter::isShooting() {
+	return fire_single->Get();
+}
+
 void Shooter::up() {
 	pos_sol->Set(DoubleSolenoid::Value::kForward);
 }
 
 void Shooter::down() {
 	pos_sol->Set(DoubleSolenoid::Value::kReverse);
+}
+
+bool Shooter::isUp(){
+	return pos_sol->Get() == DoubleSolenoid::Value::kForward;
 }

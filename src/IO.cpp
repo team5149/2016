@@ -1,7 +1,9 @@
 #include "IO.h"
+
 #include "utils/constants.h"
+#include "utils/functions.h"
+
 #include "robot.h"
-#include <cassert>
 
 IO::IO(){
 	driver_stick.reset(new Joystick{Constants::DRIVER_JOYSTICK});
@@ -15,16 +17,16 @@ void IO::Run() {
 
 	// DRIVE 
 	const float left_power {driver_stick->GetY()};
-	const float right_power {driver_stick->GetX()};
+	const float right_power {driver_stick->GetZ()};
 
-	Robot::drive->setPower(left_power, right_power);
+	Robot::drive->setPower(
+			utils::bound(utils::deadband(left_power)), 
+			utils::bound(utils::deadband(right_power)));
 
 
 	// ARM 
 	const float arm_power { manip_stick->GetY() };
-	if(fabs(arm_power) > 0.2){
-		Robot::hand->setMotor(arm_power);
-	}
+	Robot::hand->setMotor(utils::bound(utils::deadband(arm_power, 0.2)));
 
 	const bool grip { manip_stick->GetRawButton(4) };
 	if(grip) { Robot::hand->grab(); }
@@ -33,11 +35,14 @@ void IO::Run() {
 
 	// SHOOTER 
 	const bool shoot { manip_stick->GetRawButton(3) };
-	if(shoot) { Robot::shooter->fire(); }
-	else { Robot::shooter->retract(); }
+	if(shootLatch(shoot)) {
+		if(Robot::shooter->isShooting()){ Robot::shooter->retract(); }
+		else { Robot::shooter->fire(); }
+	}
 
 	const bool arm_up { manip_stick->GetRawButton(2) };
-	if(arm_up) { Robot::shooter->up(); }
-	else { Robot::shooter->down(); }
-
+	if(angleLatch(arm_up)){
+		if(Robot::shooter->isUp()) { Robot::shooter->down(); }
+		else { Robot::shooter->down(); }
+	}
 }

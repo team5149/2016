@@ -13,9 +13,13 @@ public:
 	void fire();
 	void retract();
 
+	bool isShooting();
+
 	// controlling angle pos
 	void up();
 	void down();
+
+	bool isUp();
 
 
 private:

@@ -2,6 +2,7 @@
 #define IO_H
 
 #include "WPILib.h"
+#include "utils/latch.h"
 
 // IO reads inputs from the drivers and uses them to
 // control the subsystems.
@@ -14,6 +15,9 @@ public:
 
 private:
 	std::shared_ptr<Joystick> driver_stick, manip_stick;
+
+	// defaults to true
+	Latch shootLatch, angleLatch;
 };
 
 #endif // io
