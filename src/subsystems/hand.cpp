@@ -21,7 +21,12 @@ void Hand::release(){
 }
 
 void Hand::setMotor(float power) {
+	if(atTop() && power < 0.0) { power = 0.0; }
 	tal_a->Set(power);
+}
+
+bool Hand::atTop(){
+	return !limit_a->Get();
 }
 
 void Hand::updateSwitch() {

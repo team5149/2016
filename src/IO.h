@@ -17,7 +17,9 @@ private:
 	std::shared_ptr<Joystick> driver_stick, manip_stick;
 
 	// defaults to true
-	Latch shootLatch, angleLatch;
+	Latch shootLatch, angleLatch, dirLatch;
+
+	bool dir_switch;
 };
 
 #endif // io

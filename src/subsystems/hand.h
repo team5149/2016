@@ -18,6 +18,8 @@ public:
 
 	void updateSwitch();
 
+	bool atTop();
+
 private:
 	std::shared_ptr<Talon> tal_a;
 	std::shared_ptr<DoubleSolenoid> gripper;

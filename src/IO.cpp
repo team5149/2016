@@ -10,18 +10,27 @@ IO::IO(){
 	manip_stick.reset(new Joystick{Constants::MANIP_JOYSTICK});
 
 	printf("stick has %d axis\n", driver_stick->GetAxisCount());
+	dir_switch = false;
 
 }
 
 void IO::Run() {
 
 	// DRIVE 
-	const float left_power {driver_stick->GetY()};
-	const float right_power {driver_stick->GetZ()};
+	float left_power {-driver_stick->GetY()};
+	float right_power {driver_stick->GetThrottle()};
 
-	Robot::drive->setPower(
-			utils::bound(utils::deadband(left_power)), 
-			utils::bound(utils::deadband(right_power)));
+	bool flip = driver_stick->GetRawButton(3);
+	if(dirLatch(flip)){
+		printf("swapped");
+		dir_switch = !dir_switch;
+	}
+
+	left_power = utils::bound(utils::deadband(left_power)*0.75); 
+	right_power = utils::bound(utils::deadband(right_power))*0.65;
+
+	if(dir_switch){ Robot::drive->setPower(right_power, left_power); }
+	else { Robot::drive->setPower(left_power, right_power); } 
 
 
 	// ARM 

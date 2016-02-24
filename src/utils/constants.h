@@ -32,7 +32,7 @@ namespace Constants {
 	constexpr uint32_t HAND_GRAB_SOLENOID_A {3};
 	constexpr uint32_t HAND_RELEASE_SOLENOID_A {4};
 
-	constexpr uint32_t LIMIT_SWITCH_HIGH {1};
+	constexpr uint32_t LIMIT_SWITCH_HIGH {0};
 
 	constexpr int LIMIT_SWITCH_HIGH_DEBOUNCE_COUNT {10};
 }
